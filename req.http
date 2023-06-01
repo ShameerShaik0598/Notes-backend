@@ -1,0 +1,56 @@
+#testing the route
+get http://localhost:1500/user/test
+
+### user-registration
+post http://localhost:1500/user/user-registration
+Content-Type: application/json
+
+{
+  "first_name":"sam",
+  "last_name":"vishnu",
+  "email":"sam@gmail.com",
+  "password":"sam"
+}
+
+### user-login
+post http://localhost:1500/user/user-login
+Content-Type: application/json
+
+{
+  "email":"sam@gmail.com",
+  "password":"sam"
+}
+
+### get-all-notes
+get http://localhost:1500/notes/get-all-notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJmaXJzdF9uYW1lIjoic2FtIiwibGFzdF9uYW1lIjoidmlzaG51IiwiZW1haWwiOiJzYW1AZ21haWwuY29tIiwic3RhdHVzIjp0cnVlLCJpYXQiOjE2ODU2MTU5NjIsImV4cCI6MTY4NTYxOTU2Mn0.DlIHVl9Rb-7ypV4hyVlMny_DQ8V3-wbUuoz-Zun9UJM
+
+### add-notes
+post http://localhost:1500/notes/add-notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJmaXJzdF9uYW1lIjoic2FtIiwibGFzdF9uYW1lIjoidmlzaG51IiwiZW1haWwiOiJzYW1AZ21haWwuY29tIiwic3RhdHVzIjp0cnVlLCJpYXQiOjE2ODU2MTU5NjIsImV4cCI6MTY4NTYxOTU2Mn0.DlIHVl9Rb-7ypV4hyVlMny_DQ8V3-wbUuoz-Zun9UJM
+Content-Type: application/json
+
+{
+  "note":"hey @123 this is my first note"
+}
+
+### update-notes
+put http://localhost:1500/notes/update-notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJmaXJzdF9uYW1lIjoic2hhbWlyIiwibGFzdF9uYW1lIjoic2FtdWVsIiwiZW1haWwiOiJzYW1AZ21haWwuY29tIiwic3RhdHVzIjp0cnVlLCJpYXQiOjE2ODU2MTUxODksImV4cCI6MTY4NTYxODc4OX0.__QtaaF5aOKYS01t-b11QR1zEKxyLwPLm_VaOdeWKuo
+Content-Type: application/json
+
+{
+  "note_id":"1",
+  "note":"hey note is updated"
+}
+
+### delete-notes
+delete http://localhost:1500/notes/delete-notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJmaXJzdF9uYW1lIjoic2hhbWlyIiwibGFzdF9uYW1lIjoic2FtdWVsIiwiZW1haWwiOiJzYW1AZ21haWwuY29tIiwic3RhdHVzIjp0cnVlLCJpYXQiOjE2ODU2MTUxODksImV4cCI6MTY4NTYxODc4OX0.__QtaaF5aOKYS01t-b11QR1zEKxyLwPLm_VaOdeWKuo
+Content-Type: application/json
+
+{
+  "note_id":"1",
+  "status":"false"
+}
+

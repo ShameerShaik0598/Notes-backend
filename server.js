@@ -10,6 +10,9 @@ require("dotenv").config();
 //listen to the port
 app.listen(process.env.PORT, () => console.log("Port is on 1500"));
 
+const cors = require("cors");
+app.use(cors());
+
 //import database connection
 const sequelize = require("./database/db.config");
 
@@ -24,6 +27,9 @@ const { User } = require("./database/models/user.model");
 const { Notes } = require("./database/models/notes.model");
 User.sync();
 Notes.sync();
+
+const path = require("path");
+app.use(express.static(path.join(__dirname, "../build")));
 
 //body parser
 app.use(express.json());
@@ -41,6 +47,10 @@ app.use("/user", userApp);
 
 //Routing for notes api
 app.use("/notes", notesApp);
+
+//email redis
+// const getCountOfNotesAndScheduleEmail = require("./controllers/notes.controller");
+// app.use("/notescount", getCountOfNotesAndScheduleEmail);
 
 //invalid path
 app.use("*", (req, res) => {

@@ -12,7 +12,8 @@ const {
   addNotes,
   getAllNotes,
   updateNotes,
-  deleteNote
+  deleteNote,
+  // getCountOfNotesAndScheduleEmail,
 } = require("../controllers/notes.controller");
 
 //Routes
@@ -24,9 +25,16 @@ notesApp.get("/get-all-notes", verifyUserToken, getAllNotes);
 notesApp.post("/add-notes", verifyUserToken, addNotes);
 
 //update notes
-notesApp.put("/update-notes", verifyUserToken, updateNotes);
+notesApp.put("/update-notes/:note_id", verifyUserToken, updateNotes);
+
+//count total notes in one day
+// notesApp.get(
+//   "/total-notes/:user_id",
+//   verifyUserToken,
+//   getCountOfNotesAndScheduleEmail
+// );
 
 //delete notes
-notesApp.delete("/delete-notes", verifyUserToken, deleteNote);
+notesApp.put("/delete-notes/:note_id", verifyUserToken, deleteNote);
 
 module.exports = notesApp;

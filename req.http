@@ -17,40 +17,67 @@ post http://localhost:1500/user/user-login
 Content-Type: application/json
 
 {
-  "email":"sam@gmail.com",
-  "password":"sam"
+  "email":"nreply9090@gmail.com",
+  "password":"nreply"
 }
+
+### post >> Forget Password
+POST http://localhost:1500/user/forgot-password
+Content-Type: application/json
+
+{
+     "email":"sam@gmail.com"
+}
+
+### post >> Reset password
+POST http://localhost:1500/user/reset-password/email/nreply9090@gmail.com
+Content-Type: application/json
+
+{
+    "otp":318679,
+    "password":"12345"
+}
+
 
 ### get-all-notes
 get http://localhost:1500/notes/get-all-notes
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJmaXJzdF9uYW1lIjoic2FtIiwibGFzdF9uYW1lIjoidmlzaG51IiwiZW1haWwiOiJzYW1AZ21haWwuY29tIiwic3RhdHVzIjp0cnVlLCJpYXQiOjE2ODU2MTU5NjIsImV4cCI6MTY4NTYxOTU2Mn0.DlIHVl9Rb-7ypV4hyVlMny_DQ8V3-wbUuoz-Zun9UJM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJmaXJzdF9uYW1lIjoibnJlcGx5IiwibGFzdF9uYW1lIjoibnJlcGx5IiwiZW1haWwiOiJucmVwbHk5MDkwQGdtYWlsLmNvbSIsInN0YXR1cyI6dHJ1ZSwiaWF0IjoxNjg2MzEwMDQ5LCJleHAiOjE2ODY0ODI4NDl9.mLj8k4cU4j3yCGmSyCYksIihemE8JesfG88uBgAltRA
 
 ### add-notes
 post http://localhost:1500/notes/add-notes
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJmaXJzdF9uYW1lIjoic2FtIiwibGFzdF9uYW1lIjoidmlzaG51IiwiZW1haWwiOiJzYW1AZ21haWwuY29tIiwic3RhdHVzIjp0cnVlLCJpYXQiOjE2ODU2MTU5NjIsImV4cCI6MTY4NTYxOTU2Mn0.DlIHVl9Rb-7ypV4hyVlMny_DQ8V3-wbUuoz-Zun9UJM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJmaXJzdF9uYW1lIjoibnJlcGx5IiwibGFzdF9uYW1lIjoibnJlcGx5IiwiZW1haWwiOiJucmVwbHk5MDkwQGdtYWlsLmNvbSIsInN0YXR1cyI6dHJ1ZSwiaWF0IjoxNjg2MzEwMDQ5LCJleHAiOjE2ODY0ODI4NDl9.mLj8k4cU4j3yCGmSyCYksIihemE8JesfG88uBgAltRA
 Content-Type: application/json
 
 {
-  "note":"hey @123 this is my first note"
+  "note":"hi test 5"
 }
 
 ### update-notes
-put http://localhost:1500/notes/update-notes
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJmaXJzdF9uYW1lIjoic2hhbWlyIiwibGFzdF9uYW1lIjoic2FtdWVsIiwiZW1haWwiOiJzYW1AZ21haWwuY29tIiwic3RhdHVzIjp0cnVlLCJpYXQiOjE2ODU2MTUxODksImV4cCI6MTY4NTYxODc4OX0.__QtaaF5aOKYS01t-b11QR1zEKxyLwPLm_VaOdeWKuo
+put http://localhost:1500/notes/update-notes/10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJmaXJzdF9uYW1lIjoic2FtIiwibGFzdF9uYW1lIjoidmlzaG51IiwiZW1haWwiOiJzYW1AZ21haWwuY29tIiwic3RhdHVzIjp0cnVlLCJpYXQiOjE2ODYxMTQwNTQsImV4cCI6MTY4NjExNzY1NH0.s-ncTi8tGhJmlvBVdKablOocTC1WwFOyatSm5JOm-7U
 Content-Type: application/json
 
 {
-  "note_id":"1",
-  "note":"hey note is updated"
+  "status":"true",
+  "note":"hey sammy"
 }
 
 ### delete-notes
-delete http://localhost:1500/notes/delete-notes
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJmaXJzdF9uYW1lIjoic2hhbWlyIiwibGFzdF9uYW1lIjoic2FtdWVsIiwiZW1haWwiOiJzYW1AZ21haWwuY29tIiwic3RhdHVzIjp0cnVlLCJpYXQiOjE2ODU2MTUxODksImV4cCI6MTY4NTYxODc4OX0.__QtaaF5aOKYS01t-b11QR1zEKxyLwPLm_VaOdeWKuo
+PUT http://localhost:1500/notes/delete-notes/10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJmaXJzdF9uYW1lIjoic2FtIiwibGFzdF9uYW1lIjoidmlzaG51IiwiZW1haWwiOiJzYW1AZ21haWwuY29tIiwic3RhdHVzIjp0cnVlLCJpYXQiOjE2ODYxMTQwNTQsImV4cCI6MTY4NjExNzY1NH0.s-ncTi8tGhJmlvBVdKablOocTC1WwFOyatSm5JOm-7U
 Content-Type: application/json
 
 {
-  "note_id":"1",
+
   "status":"false"
 }
+
+# ### total-notes in one day
+# get  http://localhost:1500/notes/total-notes/6
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJmaXJzdF9uYW1lIjoibnJlcGx5IiwibGFzdF9uYW1lIjoibnJlcGx5IiwiZW1haWwiOiJucmVwbHk5MDkwQGdtYWlsLmNvbSIsInN0YXR1cyI6dHJ1ZSwiaWF0IjoxNjg2MzEwMDQ5LCJleHAiOjE2ODY0ODI4NDl9.mLj8k4cU4j3yCGmSyCYksIihemE8JesfG88uBgAltRA
+# Content-Type: application/json
+
+# {
+#      "email":"nreply9090@gmail.com"
+# }
 
